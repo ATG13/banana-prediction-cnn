@@ -2,10 +2,9 @@ banana-ripeness-cnn/
 ├── README.md                  # Project overview, setup instructions, usage
 ├── requirements.txt           # Dependencies: tensorflow, streamlit, opencv-python, matplotlib, scikit-learn
 ├── data/                      # Raw and processed datasets
-│   └── Banana Ripeness Classification Dataset/             # Train/val/test splits (80/10/10)
-│       ├── train/
-│       ├── val/
-│       └── test/
+│   ├── train/
+│   ├── val/
+│   └── test/
 ├── src/                       # Python source code
 │   ├── data_preprocessing.py  # Load, resize, augment, split data
 │   ├── model.py               # CNN architecture definition
