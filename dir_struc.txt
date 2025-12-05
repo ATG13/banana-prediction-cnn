@@ -2,12 +2,7 @@ banana-ripeness-cnn/
 ├── README.md                  # Project overview, setup instructions, usage
 ├── requirements.txt           # Dependencies: tensorflow, streamlit, opencv-python, matplotlib, scikit-learn
 ├── data/                      # Raw and processed datasets
-│   ├── raw/                   # Downloaded Kaggle dataset (~13K images) [web:1]
-│   │   ├── Unripe/
-│   │   ├── Ripening/
-│   │   ├── Ripe/
-│   │   └── Overripe/
-│   └── processed/             # Train/val/test splits (80/10/10)
+│   └── Banana Ripeness Classification Dataset/             # Train/val/test splits (80/10/10)
 │       ├── train/
 │       ├── val/
 │       └── test/

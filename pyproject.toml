@@ -5,6 +5,13 @@ description = "Project to predict banana ripeness level"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "ipykernel>=7.1.0",
+    "matplotlib>=3.10.7",
+    "nbconvert>=7.16.6",
     "numpy>=2.3.5",
+    "opencv-python>=4.11.0.86",
     "pandas>=2.3.3",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "tensorflow>=2.20.0",
 ]
