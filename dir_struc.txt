@@ -1,0 +1,43 @@
+banana-ripeness-cnn/
+├── README.md                  # Project overview, setup instructions, usage
+├── requirements.txt           # Dependencies: tensorflow, streamlit, opencv-python, matplotlib, scikit-learn
+├── data/                      # Raw and processed datasets
+│   ├── raw/                   # Downloaded Kaggle dataset (~13K images) [web:1]
+│   │   ├── Unripe/
+│   │   ├── Ripening/
+│   │   ├── Ripe/
+│   │   └── Overripe/
+│   └── processed/             # Train/val/test splits (80/10/10)
+│       ├── train/
+│       ├── val/
+│       └── test/
+├── src/                       # Python source code
+│   ├── data_preprocessing.py  # Load, resize, augment, split data
+│   ├── model.py               # CNN architecture definition
+│   ├── train.py               # Training loop with callbacks
+│   ├── evaluate.py            # Metrics, confusion matrix, plots
+│   └── utils.py               # Helpers (plotting, metrics)
+├── models/                    # Saved models and weights
+│   ├── best_model.h5          # Final trained model
+│   └── training_history.pkl   # Loss/accuracy curves data
+├── notebooks/                 # Exploratory Jupyter notebooks
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_model_experimentation.ipynb
+│   └── 03_results_analysis.ipynb
+├── app/                       # Streamlit web interface
+│   ├── app.py                 # Main Streamlit app
+│   ├── predict.py             # Image preprocessing and prediction
+│   └── assets/                # CSS, images for UI
+│       └── banana_stages.png  # Reference ripeness chart
+├── reports/                   # Assignment deliverables
+│   ├── final_report.pdf       # Main report (problem, method, results)
+│   ├── final_report.md        # Markdown source
+│   └── figures/               # Generated plots
+│       ├── accuracy_curve.png
+│       ├── confusion_matrix.png
+│       └── sample_predictions.png
+├── results/                   # Training outputs
+│   ├── training_log.csv       # Epoch-wise metrics
+│   └── predictions_test.csv   # Test set predictions vs ground truth
+└── .gitignore                 # Ignore data/, __pycache__, .DS_Store
+
