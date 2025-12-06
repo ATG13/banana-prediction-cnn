@@ -2,8 +2,6 @@ import sys
 import os
 from pathlib import Path
 
-# Add project root to path to import src modules correctly
-# This assumes the script is run from the src directory or we can resolve the path relative to this file
 current_file = Path(__file__).resolve()
 project_root = current_file.parent.parent
 sys.path.append(str(project_root))
@@ -13,11 +11,9 @@ from src.data_processing import load_data
 
 def test_main():
     # Load best model
-    # Assuming models are in models/ directory at the project root
     model_path = project_root / "models" / "banana_model_best.keras"
     
-    # data_processing.py uses relative path "../data", so we must ensure CWD is src/
-    # This allows the script to be run from project root or src/
+    # Putting the correct path
     if Path.cwd().name != 'src':
         print(f"Changing working directory to {current_file.parent} to support data loading...")
         os.chdir(current_file.parent)
@@ -54,8 +50,6 @@ def test_main():
     print(f"Validation Accuracy: {val_acc:.4f}")
     
     # Evaluate on Test Data
-    # Although the user asked specifically for train and val, it's usually good to show test too, 
-    # or arguably test is what 'test.py' implies.
     print("\n" + "="*30)
     print("Evaluating on Test Data...")
     print("="*30)

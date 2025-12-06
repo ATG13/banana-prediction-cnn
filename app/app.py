@@ -4,20 +4,19 @@ from PIL import Image, ImageOps
 import numpy as np
 from pathlib import Path
 
-# --- Configuration ---
+# Config
 st.set_page_config(
     page_title="Banana Ripeness Predictor",
     page_icon="🍌",
     layout="centered"
 )
 
-# --- Constants ---
+#  Constants 
 MODEL_Path = Path(__file__).parent.parent / "models" / "banana_model_best.keras"
-# Class labels in alphabetical order (standard for Keras flow_from_directory)
 CLASS_NAMES = ['Overripe', 'Ripe', 'Rotten', 'Unripe']
 IMG_SIZE = (224, 224)
 
-# --- Model Loading ---
+# Loading model 
 @st.cache_resource
 def load_prediction_model(model_path):
     """Loads the Keras model from the specified path."""
@@ -31,7 +30,7 @@ def load_prediction_model(model_path):
         st.error(f"Error loading model: {e}")
         return None
 
-# --- Preprocessing ---
+# Preprocessing 
 def preprocess_image(image):
     """
     Preprocesses the image to match the training data requirements.
@@ -86,19 +85,13 @@ def main():
                 
                 # Get Result
                 predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
-                confidence = 100 * np.max(predictions[0]) # Softmax usually not needed if model has softmax output, but 'predict' returns logits or probs. 
-                # If model output is softmax, np.max is enough. If logits, tf.nn.softmax is needed.
-                # Assuming standard classifier with softmax output or similar. 
-                # Let's trust the raw prediction for argmax, and formatted confidence.
-                
-                # If the model didn't have softmax activation in the last layer, predictions might be logits.
-                # However, for display, let's keep it simple.
+                confidence = 100 * np.max(predictions[0])
                 
                 st.success(f"**Prediction:** {predicted_class}")
                 st.metric(label="Confidence", value=f"{confidence:.2f}%")
                 
-                # Optional: Show prob distribution
-                # st.bar_chart(dict(zip(CLASS_NAMES, predictions[0])))
+                # Show prob distribution
+                st.bar_chart(dict(zip(CLASS_NAMES, predictions[0])))
 
         except Exception as e:
             st.error(f"Error processing image: {e}")

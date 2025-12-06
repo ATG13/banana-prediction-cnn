@@ -1,17 +1,14 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models
 
-def create_banana_cnn(input_shape=(224, 224, 3), num_classes=4):
+def create_banana_cnn():
     """
     Creates a simple CNN for banana ripeness classification.
-    
-    Args:
-        input_shape: Shape of input images (height, width, channels)
-        num_classes: Number of ripeness classes (default: 4)
-    
-    Returns:
-        Compiled Keras model
     """
+
+    input_shape=(224, 224, 3)
+    num_classes=4
+
     model = models.Sequential([
         # First Convolutional Block
         layers.Conv2D(32, (3, 3), activation='relu', input_shape=input_shape),
@@ -41,8 +38,8 @@ def create_banana_cnn(input_shape=(224, 224, 3), num_classes=4):
     
     return model
 
-# Usage example
+
 if __name__ == "__main__":
     model = create_banana_cnn()
     model.summary()
-    print(f"Model created with input shape (224, 224, 3) and {model.count_params():,} parameters [file:2].")
+    print(f"Model created with input shape (224, 224, 3) and {model.count_params():,} parameters.")
