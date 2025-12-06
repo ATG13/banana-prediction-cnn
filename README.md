@@ -65,4 +65,4 @@ Open the provided local URL in your web browser to interact with the app.
 *   **Matplotlib & Seaborn**: For data visualization.
 
 ## Link to data source
-(Kaggle Dataset)[https://www.kaggle.com/datasets/shahriar26s/banana-ripeness-classification-dataset]
+[Kaggle Dataset](https://www.kaggle.com/datasets/shahriar26s/banana-ripeness-classification-dataset)
