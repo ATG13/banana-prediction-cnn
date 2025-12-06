@@ -64,5 +64,6 @@ Open the provided local URL in your web browser to interact with the app.
 *   **NumPy & Pandas**: For numerical operations and data handling.
 *   **Matplotlib & Seaborn**: For data visualization.
 
-## Link to data source
-[Kaggle Dataset](https://www.kaggle.com/datasets/shahriar26s/banana-ripeness-classification-dataset)
+## Links
+- [Kaggle Dataset](https://www.kaggle.com/datasets/shahriar26s/banana-ripeness-classification-dataset)
+- [Inspiration paper](https://www.scitepress.org/PublishedPapers/2023/116546/116546.pdf)
