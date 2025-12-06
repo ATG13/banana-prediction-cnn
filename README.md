@@ -63,3 +63,6 @@ Open the provided local URL in your web browser to interact with the app.
 *   **OpenCV & Pillow**: For image processing.
 *   **NumPy & Pandas**: For numerical operations and data handling.
 *   **Matplotlib & Seaborn**: For data visualization.
+
+## Link to data source
+(Kaggle Dataset)[https://www.kaggle.com/datasets/shahriar26s/banana-ripeness-classification-dataset]
